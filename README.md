@@ -9,6 +9,6 @@ This project is made for purposes of Databases Course at my faculty. I started b
 
 <b>*Important:</b> Use Visual Studio to open the project.*
 ## Documentation
-Get started by reading through the [SmartSharing documentation]().
+Get started by reading through the [SmartSharing documentation](https://github.com/bmojanoski/SmartSharingnewnew/blob/master/Documentation.md).
 ## Screenshots
-You can see screenshots from web app in file named [Screenshots]().
+You can see screenshots from web app in file named [Screenshots](https://github.com/bmojanoski/SmartSharingnewnew/tree/master/Screenshots).
