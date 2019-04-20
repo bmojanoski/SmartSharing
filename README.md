@@ -1,5 +1,6 @@
 # SmartSharing | Databases Course Project
 This project is made for purposes of Databases Course at my faculty. I started by drawing the ER diagram, then transforming the ER diagram into a relational model with relational patterns. Then I wrote a code for creating tables and filling the data. We used PostgreSQL at course. Finally, in ASP.NET, I made this web application.
+
 *See ER diagram,Relational model and SQL code in Database folder*
 ## Used technologies:
 - ASP.NET
