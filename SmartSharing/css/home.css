@@ -1,0 +1,79 @@
+﻿body {
+    background-image: url("/img/donacija3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Ubuntu', sans-serif;
+    height: 100vh;
+}
+html{
+    overflow-y:hidden;
+}
+#form1{
+    padding: 155px 202px  202px  202px ;
+    width: 230px;
+    height: 100vh;
+    z-index: 15;
+    top: 30%;
+    left: 48%;
+    margin: -100px 0px 0px -150px;
+    background-color: rgba(115,44,44,0.7);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#div1{
+    color: white;
+    width: 360px;
+}
+input[type=text]{
+    width: 280px;   
+    height: 40px;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 0px 40px; 
+    border-radius: 20px;
+    background-image: url('/img/login.png');
+    background-repeat: no-repeat;
+    background-position: 5px 10px; 
+}
+#TextBox22{
+    width: 280px;
+    height: 40px;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 0px 40px; 
+    border-radius: 20px;
+    background-image: url('/img/pas.png');
+    background-repeat: no-repeat;
+    background-position: 5px 8px; 
+}
+input[type=text]:focus {
+  background-color: #faebd7;
+}
+h2{
+    font-size: 20px;
+    text-align: center;
+}
+#Button1{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    font-size: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-left: auto;
+    border-radius: 20px;
+}
+#HyperLink1{
+    color: white;
+}
+#kopcinja, #pasvord, #akaunt{
+    color: #fee387;
+    font-size: 13px;
+    font-style: oblique;    
+}

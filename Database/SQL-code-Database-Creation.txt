@@ -1,0 +1,130 @@
+CREATE TABLE Korisnik
+(
+ID_korisnik INT,
+Ime varchar(20),
+Prezime varchar(20),
+Grad varchar(20),
+Ulica varchar(20),
+Drzava varchar(20),
+Korisnickoime varchar(15),
+Lozinka varchar(30),
+constraint pravilen_email check(Korisnickoime like '%@%.%'),
+constraint pk_korisnik PRIMARY KEY (ID_korisnik)
+);
+
+CREATE TABLE Donator
+(
+ID_donator INT,
+constraint pk_donator PRIMARY KEY (ID_donator),
+constraint fk_donator_kon_korisnik FOREIGN KEY (ID_donator) REFERENCES Korisnik(ID_korisnik)
+);
+
+CREATE TABLE PotencijalenPrimach
+(
+ID_potencijalenprimach INT,
+constraint pk_potencijalenprimach PRIMARY KEY (ID_potencijalenprimach),
+constraint fk_potencijalenprimach_kon_korisnik FOREIGN KEY (ID_potencijalenprimach) REFERENCES Korisnik(ID_korisnik)
+);
+
+CREATE TABLE StatusNaDonacija
+(
+ID_status INT,
+Vrednost  bool,
+constraint pk_statusnadonacija PRIMARY KEY (ID_status)
+);
+
+CREATE TABLE Admin
+(
+ID_admin INT,
+Account varchar(15),
+Password varchar(30),
+constraint pk_admin PRIMARY KEY (ID_admin)
+);
+
+CREATE TABLE Donacija
+(
+ID_donacija INT,
+Tipnadonacija varchar(20),
+Dimenzii varchar(20),
+Sostojba varchar(50),
+ID_status numeric NOT NULL,
+ID_korisnik_primac numeric NOT NULL,
+ID_korisnik_donator numeric NOT NULL,
+ID_admin numeric NOT NULL,
+Datum_objavuva date,
+Datum_dodelena date,
+constraint pk_donacija PRIMARY KEY (ID_donacija),
+constraint fk_donacija_kon_statusnadonacija FOREIGN KEY (ID_status) REFERENCES StatusNaDonacija(ID_status),
+constraint fk_donacija_kon_korisnik_donator FOREIGN KEY (ID_korisnik_donator) REFERENCES Donator(ID_donator),
+constraint fk_donacija_kon_korisnik_primac FOREIGN KEY (ID_korisnik_primac) REFERENCES PotencijalenPrimach(ID_potencijalenprimach),
+constraint fk_donacija_kon_admin FOREIGN KEY (ID_admin) REFERENCES Admin(ID_admin)
+);
+
+CREATE TABLE Kriterium
+(
+ID_kriterium INT,
+Brclenovisemejstvo numeric,
+Prosecniprimanja numeric,
+Dokzaprihodi varchar(30),
+ID_admin numeric NOT NULL,
+constraint pk_kriterium PRIMARY KEY (ID_kriterium),
+constraint fk_kriterium_kon_admin FOREIGN KEY (ID_admin) REFERENCES Admin(ID_admin)
+);
+
+CREATE TABLE Podnesuvabaranje
+(
+ID_potencijalenprimach INT,
+ID_donacija numeric NOT NULL,
+ID_kriterium numeric NOT NULL,
+tekst varchar(300),
+constraint pk_podnesuvabaranje PRIMARY KEY (ID_potencijalenprimach, ID_donacija, ID_kriterium),
+constraint fk_podnesuvabaranje_kon_potencijalenprimach FOREIGN KEY (ID_potencijalenprimach) REFERENCES PotencijalenPrimach(ID_potencijalenprimach),
+constraint fk_podnesuvabaranje_kon_donacija FOREIGN KEY (ID_donacija) REFERENCES Donacija(ID_donacija),
+constraint fk_podnesuvabaranje_kon_kriterium FOREIGN KEY (ID_kriterium) REFERENCES Kriterium(ID_kriterium)
+);
+
+CREATE TABLE Telefon
+(
+ID_telefon INT,
+broj numeric,
+ID_korisnik numeric NOT NULL,
+constraint pk_telefon PRIMARY KEY (ID_telefon),
+constraint pk_telefon_kon_korisnik FOREIGN KEY (id_korisnik) references Korisnik(id_korisnik)
+);
+
+
+
+INSERT INTO "Proekt_BP".korisnik
+(id_korisnik, ime, prezime, grad, ulica, drzava, korisnickoime, lozinka)
+VALUES(10, 'Georgi', 'Ilioski', 'Prilep', 'Markovi Kuli', 'Makedonija', 'Goge', 'Ilioski.');
+VALUES(11, 'Kostadin', 'Rtoski', 'Prilep', 'Kralova Ulica', 'Makedonija', 'Koki', 'Rtoski.');
+
+INSERT INTO "Proekt_BP".admin
+(id_admin, account, "password")
+VALUES(1, 'Petar', 'Penkov.');
+VALUES ("blagojche", "mojanoski");
+
+INSERT INTO "Proekt_BP".donacija
+(id_donacija, tipnadonacija, dimenzii, sostojba, id_status, id_korisnik_primac, id_korisnik_donator, id_admin, datum_objavuva, datum_dodelena)
+VALUES(1000, 'Krevet', 'visina 1m, dolzina 3m', 'odlicna', 100, 11, 10, 1, '03.04.2018', '15.04.2018');
+
+INSERT INTO "Proekt_BP".donacija
+(id_donacija, tipnadonacija, dimenzii, sostojba, id_status, id_korisnik_primac, id_korisnik_donator, id_admin, datum_objavuva, datum_dodelena)
+VALUES(1001, 'Dvosed', 'visina 2m, dolzina 3m', 'odlicna', 100, 13, 12, 0, '05.08.2018', '15.08.2018');
+
+INSERT INTO "Proekt_BP".kriterium
+(id_kriterium, brclenovisemejstvo, prosecniprimanja, dokzaprihodi, id_admin)
+VALUES(10000, 4, 15000, 'da', 0);
+INSERT INTO "Proekt_BP".kriterium
+(id_kriterium, brclenovisemejstvo, prosecniprimanja, dokzaprihodi, id_admin)
+VALUES(10001, 2, 1000, 'da', 1);
+
+
+INSERT INTO "Proekt_BP".podnesuvabaranje
+(id_potencijalenprimach, id_donacija, id_kriterium, tekst)
+VALUES(11, 1001, 10001, 'Go podnesuvam ova baranje zatoa sto...');
+
+
+INSERT INTO "Proekt_BP".telefon
+(id_telefon, broj, id_korisnik)
+VALUES(100001, 070-356-334, 11);

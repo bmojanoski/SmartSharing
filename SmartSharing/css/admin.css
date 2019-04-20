@@ -1,0 +1,149 @@
+body {
+    background-image: url("/img/donacija3-1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Ubuntu', sans-serif;
+    height: 100%;
+}
+#form1{
+    margin-top: 5px;
+    width: 100%;
+    left: 48%;
+    background-color: rgba(115,44,44,0.95);
+    color: white;
+    text-align: center;
+}
+h1{
+    font-size: 25px;
+    text-align: center;
+}
+#Button2{
+    height: 40px;
+    text-align: left;
+    background-color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-position: 3px 5px; 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.15);
+}
+#baranje1, #baranje2{
+    width: 170px;
+    height: 40px;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 0px 20px; 
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-position: 1px 1px; 
+}
+input[type=text]:focus {
+  background-color: #faebd7;
+}
+#bbaranje{
+    height: 40px;
+    justify-content: center;
+    background-color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-position: 3px 5px; 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.15);
+}
+#HyperLink1{
+    color: white;
+}
+#tekst{
+    color: #fee387;
+    font-size: 13px;
+    font-style: oblique;
+}
+#GridView1, #GridView3, #GridView4
+{
+    width: 100%;
+    border: solid 0px black;
+    min-width: 80%;
+    border: 1px solid black;
+    background-color: white;
+}
+.header
+{
+    background-color: red;
+    font-family: 'Ubuntu', sans-serif;
+    color: black;
+    border: 1px solid black;
+    height: 25px;
+    text-align: left;
+    font-size: 16px;
+}
+.rows
+{
+    background-color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    color: black;
+    min-height: 25px;
+    text-align: left;
+    border: 1px solid black;
+
+}
+.rows:hover
+{
+    background-color: red;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+.selectedrow
+{
+    background-color: red;
+    font-family: 'Ubuntu', sans-serif;
+    color: #fff;
+    font-weight: bold;
+    text-align: left;
+}
+.mydatagrid a /** FOR THE PAGING ICONS  **/
+{
+    background-color: Transparent;
+    padding: 5px 5px 5px 5px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+}
+.mygrdContent a:hover /** FOR THE PAGING ICONS  HOVER STYLES**/
+{
+    background-color: #000;
+    color: white;
+}
+.mygrdContent span /** FOR THE PAGING ICONS CURRENT PAGE INDICATOR **/
+{
+
+    color: black;
+    padding: 5px 5px 5px 5px;
+    font-size: 14px;
+}
+.pager
+{
+    background-color: #646464;
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    height: 30px;
+    text-align: left;
+}
+.mygrdContent td
+{
+    padding: 5px;
+}
+.mygrdContent th
+{
+    padding: 5px;
+}
+#TextBox4,#TextBox5,#TextBox6,#TextBox7,#TextBox9{
+    width: 20px;
+    height: 30px;
+}
